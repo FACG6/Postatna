@@ -7,7 +7,7 @@ const handelPageNotFound = require('./handlers/notFoundSrver');
 
 const router = (request, response) => {
   const endpoint = request.url;
-  const method = request.method;
+  const { method } = request;
 
   if (endpoint === '/') {
     handelHome(request, response);
