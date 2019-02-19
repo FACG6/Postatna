@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "tape test/testLogic.js | tap-spec",
-    "start": "node src/server.js"
+    "start": "node src/server.js",
+    "testServer": "tape test/testServer.js | tap-spec"
   },
   "repository": {
     "type": "git",
