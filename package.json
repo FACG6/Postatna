@@ -1,0 +1,25 @@
+{
+  "name": "postatna",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FACG6/Postatna.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FACG6/Postatna/issues"
+  },
+  "homepage": "https://github.com/FACG6/Postatna#readme",
+  "devDependencies": {
+    "eslint": "^5.14.1"
+  }
+}
