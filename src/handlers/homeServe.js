@@ -1,5 +1,19 @@
 const fs = require('fs');
 const path = require('path');
+const { handelServerError } = require('./notFoundSrver');
+
+const handelHome = (req, res) => {
+  const pathFile = path.join(__dirname, '..', '..', 'public', 'index.html');
+  fs.readFile(pathFile, (err, file) => {
+    if (err) {
+      handelServerError(res);
+    } else {
+      res.writeHead(200, { 'content-type': 'text/html' });
+      res.end(file);
+    }
+  });
+};
+
 
 const handelServePages = (req, res) => {
     const endpoint = req.url;
@@ -17,7 +31,7 @@ const handelServePages = (req, res) => {
 
     fs.readFile(filesPath, (err, file) => {
         if (err) {
-            // handleServerError(req, res);
+            handleServerError(res);
             console.log('err')
         }
         res.writeHead(200, {
@@ -47,5 +61,11 @@ const handelServePages = (req, res) => {
 //     handelHome
 // } ;
 
-module.exports = 
-     handelServePages;
+
+
+
+module.exports = { 
+    handelHome,
+    handelServePages 
+};
+
