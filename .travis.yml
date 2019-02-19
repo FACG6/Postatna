@@ -1,8 +1,18 @@
 language: node_js
+
 node_js:
  - "node"
+
 env:
 - MY_VAR=EverythignIsAwesome
 - NODE_ENV=TESTlanguage: node_js
-node_js:
- - "node" 
+  global :
+  - PGPORT:5432
+
+services:
+  - postgresql
+
+before_script:
+  - npm i 
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - psql -c 'create user travis_ci_test_user with password 1;'
