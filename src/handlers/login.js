@@ -1,5 +1,5 @@
 const querystring = require('querystring');
-const checkUserData = require('./queries/checkUser');
+const checkUserData = require('./../database/queries/checkUser');
 
 const handeLogin = (request, response) => {
    let allData='';
@@ -15,7 +15,7 @@ const handeLogin = (request, response) => {
       });
       response.end();
     });
-  }
+  });
   // let allData = '';
   // return new Promise((resolve, reject) => {
   //   request.on('data', (chunkData) => {

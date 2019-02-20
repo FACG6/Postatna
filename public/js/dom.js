@@ -1,13 +1,14 @@
-const login = document.getElementById('login');
-const email = document.getElementById('email');
-const pass = document.getElementById('password');
+const email = document.querySelectorAll('#email');
+const pass = document.querySelectorAll('#password');
+const loginBtn = document.querySelectorAll('#login-btn');
 
-submit.addEventListener('click', (e) => {
+pass.addEventListener('click', (e) => {
   e.preventDefault();
   const userData = JSON.stringify({
     email: email.value,
     password: password.value,
   });
-  fetch('/login', 'POST', userData)
+console.log(userData);
+  // fetch('/login', 'POST', userData, cb)
 });
 
