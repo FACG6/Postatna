@@ -10,13 +10,13 @@ const addUser = (userName, userEmail, userPassword, cb) => {
   connect.query(addNewUser, values, cb);
 };
 
-// addUser('ahmed', 'ahmed@hotmail', 'kannjhjh', (err, res) => {
-//   if (err) {
-//     console.log(err);
-//   } else {
-//     console.log(null, res);
-//   }
-// });
+addUser('ahmed', 'ahmed@hotmail', 'kannjhjh', (err, res) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log(null, res);
+  }
+});
 
 
 module.exports = addUser;
