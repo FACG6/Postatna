@@ -10,20 +10,19 @@ const getPosts = (cb) => {
   dbConection.query(sqlquery, cb);
 };
 
-getUser((err, res) => {
-  if (err) return (err);
+// getUser((err, res) => {
+//   if (err) return (err);
 
-  console.log((null, res.rows));
+//   console.log((null, res.rows));
 
-});
+// });
 
-getPosts((err, res) => {
-  if (err) return (err);
-  return (null, res.rows);
-});
+// getPosts((err, res) => {
+//   if (err) return (err);
+//   return (null, res.rows);
+// });
 
 module.exports = {
   getUser,
   getPosts,
 };
-
