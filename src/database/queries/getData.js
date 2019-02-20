@@ -6,13 +6,15 @@ const getUser = (cb) => {
 };
 
 const getPosts = (cb) => {
-  const sqlquery = 'select id,description,user_id from posts';
+  const sqlquery = 'select id,description,postdate,user_id from posts';
   dbConection.query(sqlquery, cb);
 };
 
 // getUser((err, res) => {
 //   if (err) return (err);
-//   return (null, res.rows);
+
+//   console.log((null, res.rows));
+
 // });
 
 // getPosts((err, res) => {

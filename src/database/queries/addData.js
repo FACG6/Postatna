@@ -18,6 +18,7 @@ const addPost = (description, userid, cb) => {
   connect.query(addPostQuery, values, cb);
 };
 
+
 // addPost('fjkhf', 1, (err, res) => {
 //   if (err) console.log(err);
 //   else console.log(res);

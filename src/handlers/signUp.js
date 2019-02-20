@@ -1,22 +1,27 @@
 
 const queryString = require('querystring');
+const { addUser } = require('../database/queries/addData');
+
+require('dotenv').config();
+
 const handelSignUp = (req, res) => {
   let allData = '';
   req.on('data', (chunk) => {
     allData += chunk;
-    
   });
   req.on('end', () => {
-    const convertedData = queryString.parse(allData);
-   
-      if (error) {
-        res.writeHead(500, { 'content-type': 'text/html' });
-        res.end('<h1>Server/Database Error</h1>');
-      } else {
-        res.writeHead(302, { location: '/' });
-        res.end();
+    const { username, email, password } = queryString.parse(allData);
+    addUser(username, email, password, (err) => {
+      if (err) {
+        console.log(err);
+
+        res.end(JSON.stringify(err));
       }
-    
+      res.writeHead(302, {
+        location: '/posts',
+      });
+      res.end();
+    });
   });
 };
 module.exports = handelSignUp;
