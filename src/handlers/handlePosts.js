@@ -1,8 +1,20 @@
 const fs = require('fs');
 const path = require('path');
 const { handelServerError } = require('./notFoundSrver');
+const { getPosts } = require('../database/queries/getData');
 
-const handelPosts = (req, res) => {
+const getDataPost = (request, response) => {
+  getPosts((err, posts) => {
+    if (err) {
+      handelServerError(response);
+    } else {
+      response.writeHead(200, { 'content-type': 'application/json' });
+      response.end(JSON.stringify(posts));
+    }
+  });
+};
+
+const handlePosts = (req, res) => {
   const pathFile = path.join(__dirname, '..', '..', 'public', 'pages', 'posts.html');
   fs.readFile(pathFile, (err, file) => {
     if (err) {
@@ -14,52 +26,18 @@ const handelPosts = (req, res) => {
   });
 };
 
-const handelServePages = (req, res) => {
-  const endpoint = req.url;
-  const conteType = {
-    html: 'text/html',
-    css: 'text/css',
-    js: 'text/javascript',
-    png: 'image/png',
-    jpg: 'image/jpg',
-    ico: 'image/x-icon',
-    json: 'application/json',
-  };
-  const extention = path.extname(endpoint).split('.')[1];
-  const filesPath = path.join(__dirname, '..', '..', ...endpoint.split('/'));
+// getTypeClubs((err, clubs) => {
+//   if (err) {
+//     response.writeHead(500, {
+//       'content-type': 'text/html',
+//     });
+//     response.end('<h1>Internal Server Error</h1>');
+//   } else {
+//     response.writeHead(200, {
+//       'content-type': 'application/json',
+//     });
+//     response.end(JSON.stringify(clubs));
+//   }
+// });
 
-  fs.readFile(filesPath, (err, file) => {
-    if (err) {
-      handelServerError(res);
-    }
-    res.writeHead(200, {
-      'content-type': conteType[extention],
-    });
-    res.end(file);
-  });
-
-  //         const readFile1 = (file) => {
-  //         return new Promise( (resolve, reject) => {
-  //          fs.readFile(file, callback)
-  //         } )
-  //     }
-  // const callback = (err, file) => {
-  //     if(err) reject(err);
-  //     else resolve(file);
-  // }
-
-  // readFile1(filesPath)
-  // res.writeHead(200, {'content-type': conteType[extention]})
-  // .then( (res) => console.log(res))
-  // .catch(console.log('error');
-};
-
-// module.exports =  {
-//     handelServePages,
-//     handelHome
-// } ;
-
-module.exports = {
-  handelPosts,
-  handelServePages,
-};
+module.exports = { handlePosts, getDataPost };

@@ -55,4 +55,36 @@ padding-bottom: 20px;
 }
 
 
+/*************** POSTS *******************/
+
+
+.theHead{
+    height: 4rem;
+    background-color: #25162d;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 1rem;
+    color: white;
+}
+.post{
+	margin: 1rem;
+    background-color: #dfcbea;
+	border-radius: 4px;
+	padding: 2rem;
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 1rem;
+
+}
+
+.post--name{
+
+}
+.post-date{
+padding-bottom: 0.5rem;
+}
+
+.post--des{
+	padding-top: 0.5rem;
+}
 
