@@ -11,18 +11,22 @@ create TABLE users(
 
 create TABLE posts(
     id serial primary key,
-    title varchar(50),
-    dess text,
+    description text,
     user_id INTEGER REFERENCES users(id)
 );
 
 insert into
     users (username, email, password)
 values
-    ('fatma', 'fatma@gmaul.coim', 'fhjhfgfy');
+    ('fatma', 'fatma.o.siam@gmail.com', '12312312'),
+    ('angham','angham@gmail.com','121212'),
+    ('dena','dena@gmail.com','111');
 insert into
-    posts (title, dess, user_id)
+    posts ( description, user_id)
 values
-    ('djfhjfh', 'fatfjkbfma@gmaul.coim', 1);
+    ( 'How Can I begin in js ', 1),
+    ( 'How Can I begin in asp ', 1),
+    ( 'How Can I begin in php ', 2);
 
  COMMIT;
+
