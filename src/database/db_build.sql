@@ -6,7 +6,7 @@ create TABLE users(
     id serial primary key,
     username varchar(30),
     email varchar(50),
-    password varchar(50)
+    password varchar
 );
 
 create TABLE posts(
