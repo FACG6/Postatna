@@ -16,32 +16,29 @@
 	</div>
 	<main>
 		<form action="/login" class="signInForm">
-			<h1>Login</h1>
-			<label>E-mail :</label>
-			<input value='' placeholder="Example: someone@hotmail.com" id="email">
-			<label>Password :</label>
-			<input value='' placeholder="Enter your Password" id='password'>
-			<button id="login-btn">Login</button>
-		</form>
-		<br>
-		<form action="/signUp" class="signUpForm">
-			<h1>Register</h1>
-			<label>Username :</label>
-			<input value='' placeholder="Enter username">
-			<label>E-mail :</label>
+			<label>E-mail</label>
 			<input value='' placeholder="Example: someone@hotmail.com">
 			<label>Password</label>
 			<input value='' placeholder="Enter your Password">
-			<label>Confirm Password :</label>
+			<button>Login</button>
+		</form>
+		<form action="/signUp" method="POST" class="signUpForm">
+			<label>Username</label>
+			<input name='username' id='username' placeholder="Enter username">
+			<label>E-mail</label>
+			<input name='email' id='email' placeholder="Example: someone@hotmail.com">
+			<label>Password</label>
+			<input name='password' id='password' placeholder="Enter your Password">
+			<label>Confirm Password</label>
 			<input value='' placeholder="Confirm your Password">
-			<button>Sign Up</button>
+			<button id='singupBTN'>Sign Up</button>
 		</form>
 	</main>
 	<div class="footer">
 		<h1> Footer </h1>
 	</div>
-
+	<script src="../public/js/fetch.js"></script>
 	<script src="../public/js/dom.js"></script>
 </body>
-</html>
 
+</html>
