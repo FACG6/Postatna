@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const handelServerError = (response) => {
+const handelServerError = (request, response) => {
   response.writeHead(500, {
     'content-type': 'text/html',
   });

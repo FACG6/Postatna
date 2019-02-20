@@ -3,6 +3,8 @@ const requestXHR = (url, method, data, cb) => {
   const xhr = new XMLHttpRequest();
   xhr.onreadystatechange = () => {
     if (xhr.readyState === 4) {
+      console.log('smaaaaaaaaaaaaa7', xhr.responseText);
+      
       const response = JSON.parse(xhr.responseText);
       if (xhr.status === 200) {
         if (response.error) {

@@ -1,7 +1,8 @@
 
 const queryString = require('querystring');
-const handelServePages = require('./homeServe');
-const addUser = require('./../database/queries/addData');
+const { addUser } = require('../database/queries/addData');
+
+require('dotenv').config();
 
 const handelSignUp = (req, res) => {
   let allData = '';
@@ -9,13 +10,16 @@ const handelSignUp = (req, res) => {
     allData += chunk;
   });
   req.on('end', () => {
-    const { email, password, username } = queryString.parse(allData);
-    console.log(queryString.parse(allData));
-    addUser(email, password, username, (err) => {
+    const { username, email, password } = queryString.parse(allData);
+    addUser(username, email, password, (err) => {
       if (err) {
-        return handelServePages(err, res);
+        console.log(err);
+
+        res.end(JSON.stringify(err));
       }
-      res.writeHead(302, { location: '/' });
+      res.writeHead(302, {
+        location: '/posts',
+      });
       res.end();
     });
   });
