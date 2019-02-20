@@ -9,7 +9,7 @@ const handelServerError = (request, response) => {
 };
 
 const handelPageNotFound = (request, response) => {
-  const filepath = path.join(__dirname, '..', 'public', 'pages', 'notFound.html');
+  const filepath = path.join(__dirname, '..', '..', 'public', 'pages', 'notFound.html');
   fs.readFile(filepath, (error, file) => {
     if (error) {
       handelServerError(response);

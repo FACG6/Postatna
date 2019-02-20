@@ -2,7 +2,7 @@ const { Pool } = require('pg');
 const url = require('url');
 require('dotenv').config();
 
-const params = url.parse(process.env.DB_URL);
+const params = url.parse(process.env.DATABASE_URL);
 
 const options = {
   user: params.auth.split(':')[0],
