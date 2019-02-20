@@ -12,7 +12,9 @@ const getPosts = (cb) => {
 
 // getUser((err, res) => {
 //   if (err) return (err);
-//   return (null, res.rows);
+
+//   console.log((null, res.rows));
+
 // });
 
 // getPosts((err, res) => {
