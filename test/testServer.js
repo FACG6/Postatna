@@ -26,16 +26,16 @@ test('Testing handleStatics: style.css', (t) => {
 });
 
 // test('Testing style.css Content', (t) => {
-// 	supertest(router)
-// 		.get('/public/css/style.css')
-// 		.expect(200)
-// 		.expect('content-type', 'text/css')
-// 		.end((err, res) => {
-// 			t.error(err);
-// 			t.equal(res.text.includes('.h') && res.text.includes(' padding: 0;'), true, 'pass')
-// 			t.end();
-// 		})
-// })
+// supertest(router)
+// .get('/public/css/style.css')
+// .expect(200)
+// .expect('content-type', 'text/css')
+// .end((err, res) => {
+// t.error(err);
+// t.equal(res.text.includes('.h') && res.text.includes(' padding: 0;'), true, 'pass')
+// t.end();
+// });
+// });
 
 test('Testing handleStatics: dom.js', (t) => {
   supertest(router)
