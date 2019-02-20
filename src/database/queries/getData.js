@@ -6,7 +6,7 @@ const getUser = (cb) => {
 };
 
 const getPosts = (cb) => {
-  const sqlquery = 'select id,description,user_id from posts';
+  const sqlquery = 'select id,description,postdate,user_id from posts';
   dbConection.query(sqlquery, cb);
 };
 
