@@ -12,6 +12,7 @@ create TABLE users(
 create TABLE posts(
     id serial primary key,
     description text,
+    postdate timestamp,
     user_id INTEGER REFERENCES users(id)
 );
 
@@ -22,11 +23,11 @@ values
     ('angham','angham@gmail.com','121212'),
     ('dena','dena@gmail.com','111');
 insert into
-    posts ( description, user_id)
+    posts ( description, postdate,user_id)
 values
-    ( 'How Can I begin in js ', 1),
-    ( 'How Can I begin in asp ', 1),
-    ( 'How Can I begin in php ', 2);
+    ( 'How Can I begin in js ','12/25/21', 1),
+    ( 'How Can I begin in asp ','12/25/21', 1),
+    ( 'How Can I begin in php ', '12/25/21',2);
 
  COMMIT;
 
