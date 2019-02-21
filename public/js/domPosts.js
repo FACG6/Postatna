@@ -18,7 +18,7 @@ window.onload = () => requestXHR('/getposts', 'GET', null, (err, res) => {
       desc.setAttribute('class', 'post--des');
       userName.textContent = post.username;
       name.textContent = post.username;
-      const postDate = post.postdate;
+      const postDate = (post.postdate).split(':00:00.000Z')[0];
       date.textContent = postDate;
       desc.textContent = post.description;
       postDiv.appendChild(name);
