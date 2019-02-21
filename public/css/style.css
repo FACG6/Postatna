@@ -25,7 +25,7 @@ main {
 .signUpForm {
 	width: 50%;
 	height: auto;
-	padding: 50px;
+	padding: 1rem;
 	margin: 0 auto;
 	background-color: darkgoldenrod;
 	box-shadow: 10px 10px 20px #aaaaaa;
@@ -40,7 +40,7 @@ main {
 .signInForm input,
 .signUpForm input {
 	display: block;
-	width: 300px;
+	width: 100%;
 	height: 40px;
 	padding: 5px;
 	margin-bottom: 30px;
@@ -49,10 +49,18 @@ main {
 
 .signInForm button,
 .signUpForm button {
-	width: 300px;
+	width: 100%;
 	height: 50px;
 	font-size: 30px;
 	cursor: pointer;
+	background-color: #333333;
+	border: none;
+	border-radius: 3px;
+	color: white;
+}
+.signInForm button :hover,
+.signUpForm button :hover{
+	color: #b78621;
 }
 
 .signInForm {
@@ -71,14 +79,7 @@ main {
 	text-decoration: underline;
 	font-weight: bold;
 }
-.footer {
-	width: 100%;
-	height: 70px;
-	line-height: 70px;
-	text-align: center;
-	background: #333;
-	color: darkgoldenrod;
-}
+
 
 
 /*************** POSTS *******************/
@@ -160,4 +161,8 @@ main {
 
 .notFoundSection--headOne {
 	color: red;
+}
+.psignUp {
+	padding: .5rem;
+	font-size: 75%;
 }
