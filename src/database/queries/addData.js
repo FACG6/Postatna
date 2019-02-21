@@ -12,7 +12,7 @@ const addUser = (userName, userEmail, userPassword, cb) => {
 };
 
 const addPost = (description, userid, cb) => {
-  const date = new Date().toString().split('GMT+0200')[0];
+  const date = new Date().toString().split(':00:00.000Z')[0];
   const addPostQuery = 'INSERT INTO posts  ( description , postdate , user_id ) values ( $1,$2,$3)';
   const values = [description, date, userid];
   connect.query(addPostQuery, values, cb);
