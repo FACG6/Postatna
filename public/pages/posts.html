@@ -11,20 +11,23 @@
 
 <body>
     <header class="theHead">
-        <h3>Logo</h3>
+        <h3>
+            <button onclick="myFunction()" class="btn">Create Post</button>
+        </h3>
         <h1>Postatna</h1>
 
-        <h3>User Name </h3>
+        <h3 id='userName'>User Name </h3>
+        <input type="submit" action='/signOut' value="sign out">
 
     </header>
-    
-        <div class="post" id='posts'>
-            <h5 class="post--name">user Name </h5>
-            <h6 class="post-date">Dtae</h6>
-            <hr class="hr">
-            <p class="post--des">des</p>
-        </div>
-    
+    <form action="/createPosts" method="post" id="create-post" class="createPost">
+        <textarea name="description" class="txtdesc" id="desc" placeholder="What do you think ?" cols="30" rows="10"></textarea>
+        <br>
+        <button class='btncreate'> Create </button>
+    </form>
+    <main>
+       
+    </main>
     <footer class="theFooter"></footer>
 
 

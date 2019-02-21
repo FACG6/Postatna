@@ -6,9 +6,5 @@ const deletePost = (postId, cb) => {
   dbConnection.query(deleteQuery, values, cb);
 };
 
-// deletePost(2, (err, res) => {
-//   if (err) return console.log(err);
-//   return console.log(res);
-// });
 
 module.exports = deletePost;

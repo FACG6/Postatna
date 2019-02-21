@@ -19,4 +19,3 @@ const rebuildData = () => {
 rebuildData();
 
 module.exports = rebuildData;
-

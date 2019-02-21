@@ -2,6 +2,9 @@
 const queryString = require('querystring');
 const { addUser } = require('../database/queries/addData');
 
+// const { sign } = require('jsonwebtoken');
+// const bcrypt = require('bcrypt');
+
 require('dotenv').config();
 
 const handelSignUp = (req, res) => {

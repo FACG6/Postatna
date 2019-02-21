@@ -15,22 +15,26 @@
 		<h1> <a href="/"></a> Postatna </h1>
 	</div>
 	<main>
-		<form action="/login" class="signInForm">
+		<form action="/login" method="POST" class="signInForm">
 			<label>E-mail</label>
-			<input value='' placeholder="Example: someone@hotmail.com">
+			<input type='email' name='loginEmail' placeholder="Example: someone@hotmail.com" required>
 			<label>Password</label>
-			<input value='' placeholder="Enter your Password">
+			<input type="password"  name='loginPass' placeholder="Enter your Password" required>
 			<button>Login</button>
+			<p class="psignUp">If you dont have account .? <a id='gotosignup'>sing up</a></p>
+			<link rel='icon' href=' https://static.thenounproject.com/png/2157102-200.png ' type='image/png' />
+
+			<!---->
 		</form>
 		<form action="/signUp" method="POST" class="signUpForm">
 			<label>Username</label>
 			<input name='username' id='username' placeholder="Enter username">
 			<label>E-mail</label>
-			<input name='email' id='email' placeholder="Example: someone@hotmail.com">
+			<input type="email" name='email' id='email' placeholder="Example: someone@hotmail.com">
 			<label>Password</label>
-			<input name='password' id='password' placeholder="Enter your Password">
+			<input type="password" name='password' id='password' placeholder="Enter your Password">
 			<label>Confirm Password</label>
-			<input value='' placeholder="Confirm your Password">
+			<input  type="password" value='' placeholder="Confirm your Password">
 			<button id='singupBTN'>Sign Up</button>
 		</form>
 	</main>

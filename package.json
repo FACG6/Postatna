@@ -7,9 +7,11 @@
     "test": "test"
   },
   "scripts": {
-    "test": "tape test/testLogic.js | tap-spec",
-    "start": "node src/server.js",
-    "testServer": "tape test/testServer.js | tap-spec"
+    "test": "tape ./test/testLogic.js | tap-spec",
+    "start": "node ./src/server.js",
+    "testServer": "tape ./test/testServer.js | tap-spec",
+    "dbConnect": "node ./src/database/db_connection.js",
+    "dbBuild": "node ./src/database/db_build.js"
   },
   "repository": {
     "type": "git",
@@ -31,7 +33,10 @@
   },
   "dependencies": {
     "bcrypt": "^3.0.4",
+    "bcryptjs": "^2.4.3",
+    "cookie": "^0.3.1",
     "dotenv": "^6.2.0",
+    "jsonwebtoken": "^8.5.0",
     "pg": "^7.8.0",
     "query-string": "^6.2.0"
   }

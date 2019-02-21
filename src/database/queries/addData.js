@@ -18,15 +18,4 @@ const addPost = (description, userid, cb) => {
   connect.query(addPostQuery, values, cb);
 };
 
-
-// addPost('fjkhf', 1, (err, res) => {
-//   if (err) console.log(err);
-//   else console.log(res);
-// });
-
-// addUser('ahmed', 'ahmed@hotmail', 'kannjhjh', (err, res) => {
-//   if (err) return (err);
-//   return (null, res);
-// });
-
 module.exports = { addUser, addPost };
