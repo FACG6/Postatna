@@ -26,18 +26,4 @@ const handlePosts = (req, res) => {
   });
 };
 
-// getTypeClubs((err, clubs) => {
-//   if (err) {
-//     response.writeHead(500, {
-//       'content-type': 'text/html',
-//     });
-//     response.end('<h1>Internal Server Error</h1>');
-//   } else {
-//     response.writeHead(200, {
-//       'content-type': 'application/json',
-//     });
-//     response.end(JSON.stringify(clubs));
-//   }
-// });
-
 module.exports = { handlePosts, getDataPost };

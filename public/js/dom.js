@@ -1,15 +1,8 @@
+const signUphref = document.getElementById('gotosignup');
+const sigupForm = document.querySelector('.signUpForm');
+const signInForm = document.querySelector('.signInForm');
 
-const email = document.querySelectorAll('#email');
-const pass = document.querySelectorAll('#password');
-const loginBtn = document.querySelectorAll('#login-btn');
-
-pass.addEventListener('click', (e) => {
-  e.preventDefault();
-  const userData = JSON.stringify({
-    email: email.value,
-    password: password.value,
-  });
-console.log(userData);
-  // fetch('/login', 'POST', userData, cb)
+signUphref.addEventListener('click', () => {
+  signInForm.style.display = 'none';
+  sigupForm.style.display = 'block';
 });
-

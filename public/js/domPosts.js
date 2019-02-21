@@ -1,29 +1,41 @@
-
 window.onload = () => requestXHR('/getposts', 'GET', null, (err, res) => {
-
   const result = res.rows;
 
   if (err) console.log(err);
 
   else {
-    result.forEach(post => {
-      const postdiv = document.getElementById('posts');
+    result.forEach((post) => {
+      const mainsection = document.getElementsByTagName('main')[0];
+      const postDiv = document.createElement('div');
       const name = document.createElement('h5');
       const date = document.createElement('h6');
       const hr = document.createElement('hr');
       const desc = document.createElement('p');
-      postdiv.classList.add = 'post';
-      date.classList.add = 'post-date';
-      desc.classList.add = 'post--des';
-      date.textContent = post.postdate;
+      const userName = document.getElementById('userName');
+      postDiv.classList.add = 'post';
+      postDiv.setAttribute('class', 'post');
+      date.setAttribute('class', 'post-date');
+      desc.setAttribute('class', 'post--des');
+      userName.textContent = post.username;
+      name.textContent = post.username;
+      const postDate = (post.postdate).split(':00:00.000Z')[0];
+      date.textContent = postDate;
       desc.textContent = post.description;
-      postdiv.appendChild(name);
-      postdiv.appendChild(date);
-      postdiv.appendChild(hr);
-      postdiv.appendChild(desc)
-      console.log(post);
+      postDiv.appendChild(name);
+      postDiv.appendChild(date);
+      postDiv.appendChild(hr);
+      postDiv.appendChild(desc);
+      mainsection.appendChild(postDiv);
     });
   }
-
-  // else console.log(res);
 });
+
+
+function myFunction() {
+  const craeteForm = document.getElementById('create-post');
+  if (craeteForm.style.display === 'none') {
+    craeteForm.style.display = 'block';
+  } else {
+    craeteForm.style.display = 'none';
+  }
+}

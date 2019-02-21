@@ -2,18 +2,23 @@ const {
   handelHome,
   handelServePages,
 } = require('./handlers/homeServe');
-const handeLogin = require('./handlers/login');
+const { handeLogin, handlesignOut } = require('./handlers/login');
 const handleSignUp = require('./handlers/signUp');
 const handleCreatePosts = require('./handlers/createPosts');
 const handleDeletePost = require('./handlers/deletePost');
-const { handlePosts, getDataPost } = require('./handlers/handlePosts');
+const {
+  handlePosts,
+  getDataPost,
+} = require('./handlers/handlePosts');
 const {
   handelPageNotFound,
 } = require('./handlers/notFoundSrver');
 
 const router = (request, response) => {
   const endpoint = request.url;
-  const { method } = request;
+  const {
+    method,
+  } = request;
 
   if (endpoint === '/') {
     handelHome(request, response);
@@ -31,6 +36,8 @@ const router = (request, response) => {
     handlePosts(request, response);
   } else if (endpoint === '/getposts' && method === 'GET') {
     getDataPost(request, response);
+  } else if (endpoint === '/signOut') {
+    handlesignOut(request, response);
   } else {
     handelPageNotFound(request, response);
   }

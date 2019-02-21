@@ -6,21 +6,9 @@ const getUser = (cb) => {
 };
 
 const getPosts = (cb) => {
-  const sqlquery = 'select id,description,postdate,user_id from posts';
+  const sqlquery = 'select *  from posts join users ON users.id = posts.user_id ;';
   dbConection.query(sqlquery, cb);
 };
-
-// getUser((err, res) => {
-//   if (err) return (err);
-
-//   console.log((null, res.rows));
-
-// });
-
-// getPosts((err, res) => {
-//   if (err) return (err);
-//   return (null, res.rows);
-// });
 
 module.exports = {
   getUser,
