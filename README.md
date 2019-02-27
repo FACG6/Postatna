@@ -1,18 +1,16 @@
 # Postatna
 
-## What is Postatna?
+## what :
 
-   Our website allows users to add posts to a feed.  
-   Our site is similar to Twitter. 
-
-
-## Why use Postatna?
-
-   Postatna allows anyone with an account to make a post.  
-   If you don't have an account, sign up and begin making post!
+   Our website it's Allows the user to add postes on the Post, Our page like Twitter >_< . 
 
 
-## How did we create Postatna? 
+## Why :
+
+   This application can anyone if you haven't an account can make sign up and login if have account and can write any postes.
+
+
+## How : 
 
   * First Day :
     - [x] make file Structure to our project.
@@ -25,12 +23,12 @@
 ## Main Skills +1 :
 
    1. Cookie.
-   2. Error Validation.
-   3. Build Database.
-   4. Test Database
+   2. Error validation.
+   3. Build data base.
+   4. test data base
    5. ESLinter.
-   6. HTTP Request.
-   7. Host on Heroku.
+   6. HTTP request.
+   7. Host on heroku.
    8. Use ES6.
    9. Git & Github flow.    
 
